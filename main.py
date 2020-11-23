@@ -64,9 +64,9 @@ def main():
     pvalue = oneway[1]
 
     print(f'pvalue: {pvalue}')
-    if pvalue <= (1 - significanceLevel):
-        print('Фактор влияет на погрешность.')             
+    if pvalue <= significanceLevel:
+        print('Фактор влияет на погрешность.')        
     else:        
-        print('Фактор не влияет на погрешность.')                   
+        print('Фактор не влияет на погрешность.')
 
 main()

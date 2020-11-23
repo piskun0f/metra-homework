@@ -65,8 +65,8 @@ def main():
 
     print(f'pvalue: {pvalue}')
     if pvalue <= (1 - significanceLevel):
-        print('Cистематических погрешностей не обнаружено.')          
-    else:
-        print('Систематические погрешности есть.')              
+        print('Фактор влияет на погрешность.')             
+    else:        
+        print('Фактор не влияет на погрешность.')                   
 
 main()

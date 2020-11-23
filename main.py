@@ -1,49 +1,49 @@
+import os
 import scipy.stats as stats
 import numpy as np
 
 def inputFile():
-    try:
-        filename = input('Input filename: ').replace('.txt', '')
-        #filename = 'F_v02c'
-        f = open(filename + '.txt', 'r')
+    while True:   
+        filename = input('Введите имя файла: ').replace('.txt', '') + '.txt'
+                
+        if os.path.isfile(filename):
+            f = open(filename, 'r')
 
-        fileString = ''
-        for s in f:        
-            fileString += s.strip() 
-        fileString = fileString.replace(',', '.').replace('\t', ' ').replace('\n', ' ')
-        
-        f.close()
-        
-        return fileString
-    
-    except FileNotFoundError:
-        print('Ошибка! Файл не найден.')
-        return inputFile()
+            fileString = ''
+            for s in f:        
+                fileString += s.strip() 
+            fileString = fileString.replace(',', '.').replace('\t', ' ').replace('\n', ' ')
+            
+            f.close()
+            
+            return fileString
+        else:
+            print('Ошибка: файла не существует.')
 
 def inputCountSplit(count):
-    try:
-        num = int(input('Введите количество разделений выборки: '))
-        if num > 1 and num < count:
-            return num
-        else:
-            print(f'Ошибка! Число должно быть в больше 1 и меньше {count - 1}')
-            return inputCountSplit(count)
-    except ValueError:
-        print('Не удалось преобразовать в число')
-        return inputCountSplit(count)
+    while True:
+        num = input('Введите количество серий, на которое стоит разделить выборку: ')
+        if num.isdigit():
+            num = int(num)
+            if num > 1 and num < count:
+                return num
+            else:
+                print(f'Ошибка: Число должно быть в больше 1 и меньше {count - 1}.')
+        else:    
+            print('Ошибка: Не удалось преобразовать ввод в число.')
     
 def inputSignificanceLevel():
-    try:
-        num = float(input('Введите уровень значимости: ').replace(',', '.'))
-        if num > 0 and num < 1:
-            return num
-        else:
-            print('Ошибка! Число должно быть больше 0 и меньше 1')
-            return inputSignificanceLevel()
-    except ValueError:
-        print('Не удалось преобразовать в число')
-        return inputSignificanceLevel()
+    while True:
+        num = input('Введите уровень значимости: ').replace(',', '.')
 
+        if num.replace('.', '',1).isdigit():
+            num = float(num)
+            if num > 0 and num < 1:
+                return num
+            else:
+                print('Ошибка: Число должно быть больше 0 и меньше 1.')
+        else:
+            print('Ошибка: Не удалось преобразовать ввод в число.')
     
 def main():    
     fileString = inputFile()

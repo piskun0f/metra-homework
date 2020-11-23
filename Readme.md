@@ -6,6 +6,11 @@
 
 Если у вас нет Python3, установите его и добавьте в Path
 
+Скачайте программу
+```
+git clone https://github.com/piskun0f/metra-homework.git
+```
+
 Откройте консоль в папке с программой
 
 Установите нужные библиотеки
@@ -18,4 +23,3 @@ pip install numpy==1.19.3
 ```
 python homeworkMetra.py
 ```
-

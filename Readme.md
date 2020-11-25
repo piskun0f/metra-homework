@@ -1,25 +1,18 @@
-# Домашнее задание по метрологии 
-## Тема: 
-Выявление медленно меняющихся систематических погрешностей с помощью критерия Фишера
+# Metrology homework
+Calculate F-critery for your sample
 
-## Как установить?
+## How to install?
 
-Если у вас нет Python3, установите его и добавьте в Path
+If you don't have Python 3.6 or later, install it
 
-Скачайте программу
+Install lib
+```
+pip install -i https://test.pypi.org/simple/ fishertest
+```
+
+Run application
 ```
 git clone https://github.com/piskun0f/metra-homework.git
-```
-
-Откройте консоль в папке с программой
-
-Установите нужные библиотеки
-```
-pip install scipy
-pip install numpy==1.19.3
-```
-
-Запустите программу
-```
-python homeworkMetra.py
+cd metra-homework
+python main
 ```

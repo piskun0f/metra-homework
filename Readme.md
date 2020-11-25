@@ -14,5 +14,5 @@ Run application
 ```
 git clone https://github.com/piskun0f/metra-homework.git
 cd metra-homework
-python main
+python main.py
 ```
